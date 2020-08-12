@@ -98,4 +98,4 @@ def train_and_evaluate_classifier(
     if threshold_plot:
         visualizer = DiscriminationThreshold(algorithm)
         visualizer.fit(training_x, training_y)
-        visualizer.show()
+        visualizer.poof()
