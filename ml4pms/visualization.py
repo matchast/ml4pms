@@ -13,8 +13,8 @@ import plotly.figure_factory as ff
 # from IPython.display import display
 
 
-# для исключения проблемной отрисовки в colab
 def configure_plotly_browser_state():
+    """ Настройка зависимостей plotly для исключения проблемной отрисовки в colab """
     import IPython
     # the display function is imported by the colab notebook
     display(IPython.core.display.HTML(
@@ -33,6 +33,7 @@ def configure_plotly_browser_state():
 
 
 def plot_pie_chart(column):
+    """ Визуализация значений pandas.Series круговой диаграммой """
     vc = column.value_counts()
     lab = vc.keys().tolist()
     val = vc.values.tolist()
@@ -71,6 +72,7 @@ def plot_pie_chart(column):
 
 
 def plot_correlation(df):
+    """ Визуализация корреляции между столбцами pandas.DataFrame """
     configure_plotly_browser_state()
 
     # корреляция

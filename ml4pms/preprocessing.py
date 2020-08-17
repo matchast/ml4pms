@@ -3,6 +3,10 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 
 
 def table_to_numeric(df: pd.DataFrame, id_cols=None, target_cols=None,  max_categories=6) -> pd.DataFrame:
+    """ Трансформация датафрейма: категориальные столбцы бинаризируются.
+    Не рекомендуется использовать этот обработчик многоразово, т.к. некоторые преобразования
+    (кодирование категорий, масштабирование) зависят от данных.
+    """
     # колонка с ID пользователя
     id_cols = id_cols or []
     # целевая колонка
